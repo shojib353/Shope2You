@@ -3,23 +3,84 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/login2">
+    app:startDestination="@id/subCat">
     <fragment
-        android:id="@+id/login2"
+        android:id="@+id/login"
         android:name="com.project.shope2you.LogIn.Login"
         android:label="login"
         tools:layout="@layout/login" >
         <action
-            android:id="@+id/action_login2_to_signup"
-            app:destination="@id/signup" />
+            android:id="@+id/action_login_to_signup2"
+            app:destination="@id/signup2" />
     </fragment>
     <fragment
-        android:id="@+id/signup"
+        android:id="@+id/signup2"
         android:name="com.project.shope2you.SignUp.Signup"
         android:label="signup"
         tools:layout="@layout/signup" >
         <action
-            android:id="@+id/action_signup_to_login2"
-            app:destination="@id/login2" />
+            android:id="@+id/action_signup2_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.project.shope2you.Home.Home"
+        android:label="home"
+        tools:layout="@layout/home" >
+        <action
+            android:id="@+id/action_home2_to_cart2"
+            app:destination="@id/cart2" />
+        <action
+            android:id="@+id/action_home2_to_profile2"
+            app:destination="@id/profile2" />
+        <action
+            android:id="@+id/action_home2_to_subCat"
+            app:destination="@id/subCat" />
+    </fragment>
+    <fragment
+        android:id="@+id/cart2"
+        android:name="com.project.shope2you.Cart.Cart"
+        android:label="cart"
+        tools:layout="@layout/cart" >
+        <action
+            android:id="@+id/action_cart2_to_profile2"
+            app:destination="@id/profile2" />
+        <action
+            android:id="@+id/action_cart2_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile2"
+        android:name="com.project.shope2you.profile.Profile"
+        android:label="profile"
+        tools:layout="@layout/profile" >
+        <action
+            android:id="@+id/action_profile2_to_home2"
+            app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_profile2_to_cart2"
+            app:destination="@id/cart2" />
+    </fragment>
+    <fragment
+        android:id="@+id/subCat"
+        android:name="com.project.shope2you.subCat.SubCat"
+        android:label="sub_cat"
+        tools:layout="@layout/sub_cat" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_subCat_to_product"
+            app:destination="@id/product" />
+    </fragment>
+    <fragment
+        android:id="@+id/product"
+        android:name="com.project.shope2you.Product.Product"
+        android:label="Product" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 </navigation>

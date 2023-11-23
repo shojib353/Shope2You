@@ -6,23 +6,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".LogIn.Login"
     android:orientation="vertical"
-    android:background="@drawable/login_background"
+    android:background="@drawable/back"
     android:paddingLeft="20dp"
     android:paddingTop="100dp"
 
     android:paddingRight="20dp"
     android:gravity="center">
-
-    <androidx.cardview.widget.CardView
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical"
+    android:saveEnabled="true">
+    <LinearLayout
+        android:background="@color/transparent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="30dp"
-        android:elevation="90dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-
-
-        >
         <LinearLayout
+            android:background="@color/transparent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -43,6 +45,8 @@
                 android:layout_marginBottom="30dp"/>
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+
+                android:id="@+id/signInEmail"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
                 android:hint="Enter Your Email"
@@ -60,6 +64,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:id="@+id/signInPassword"
                 android:layout_marginTop="25dp"
                 android:hint="Enter Your Password"
                 android:imeOptions="actionDone"
@@ -71,6 +76,7 @@
                 android:background="@drawable/box_shape"
                 android:paddingLeft="10dp"
 
+
                 android:inputType="textPassword"/>
             <Button
                 android:layout_width="match_parent"
@@ -81,41 +87,42 @@
                 android:layout_marginRight="70dp"
                 android:textSize="20dp"
                 android:textColor="#FFC107"
+                android:id="@+id/btnSignIn"
                 android:text="Sign In"/>
 
 
 
         </LinearLayout>
-
-
-
-
-    </androidx.cardview.widget.CardView>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="are you new user? "
-            android:textColor="@color/white"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="are you new user? "
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-            android:background="@color/transparent"
-            android:textAlignment="center"
+                android:background="@color/transparent"
+                android:textAlignment="center"
 
 
-            android:textColor="#FFC107"
-            android:textSize="20dp"
-            android:text="Sign Up"/>
+                android:textColor="#FFC107"
+                android:textSize="20dp"
+                android:text="Sign Up"
+                android:id="@+id/btnSignInSignUp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
+</ScrollView>
 
 </LinearLayout>
