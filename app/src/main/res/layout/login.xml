@@ -12,110 +12,127 @@
 
     android:paddingRight="20dp"
     android:gravity="center">
-
-    <androidx.cardview.widget.CardView
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical"
+    android:saveEnabled="true">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="30dp"
-        android:elevation="90dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            android:elevation="90dp"
 
 
 
-        >
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+
+                android:paddingBottom="60dp"
+                android:paddingTop="60dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign In"
+                    android:textSize="25dp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="30dp"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+
+                    android:id="@+id/signInEmail"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="25dp"
+                    android:hint="Enter Your Email"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/email"
+                    android:imeOptions="actionNext"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/box_shape"
+                    android:paddingLeft="10dp"
+                    android:inputType="textEmailAddress"
+
+
+                    />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/signInPassword"
+                    android:layout_marginTop="25dp"
+                    android:hint="Enter Your Password"
+                    android:imeOptions="actionDone"
+                    android:drawablePadding="5dp"
+
+                    android:drawableLeft="@drawable/lock"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/box_shape"
+                    android:paddingLeft="10dp"
+
+
+                    android:inputType="textPassword"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="70dp"
+                    android:background="@drawable/button_shape"
+                    android:layout_marginRight="70dp"
+                    android:textSize="20dp"
+                    android:textColor="#FFC107"
+                    android:id="@+id/btnSignIn"
+                    android:text="Sign In"/>
+
+
+
+            </LinearLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-
-            android:paddingBottom="60dp"
-            android:paddingTop="60dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            >
-
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign In"
-                android:textSize="25dp"
-                android:textColor="@color/black"
-                android:layout_marginBottom="30dp"/>
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="25dp"
-                android:hint="Enter Your Email"
-                android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/email"
-                android:imeOptions="actionNext"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/box_shape"
-                android:paddingLeft="10dp"
-                android:inputType="textEmailAddress"
-
-
-                />
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="25dp"
-                android:hint="Enter Your Password"
-                android:imeOptions="actionDone"
-                android:drawablePadding="5dp"
-
-                android:drawableLeft="@drawable/lock"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/box_shape"
-                android:paddingLeft="10dp"
-
-                android:inputType="textPassword"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="70dp"
-                android:background="@drawable/button_shape"
-                android:layout_marginRight="70dp"
                 android:textSize="20dp"
+                android:text="are you new user? "
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@color/transparent"
+                android:textAlignment="center"
+
+
                 android:textColor="#FFC107"
-                android:text="Sign In"/>
-
-
+                android:textSize="20dp"
+                android:text="Sign Up"
+                android:id="@+id/btnSignInSignUp"/>
 
         </LinearLayout>
 
-
-
-
-    </androidx.cardview.widget.CardView>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="are you new user? "
-            android:textColor="@color/white"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:background="@color/transparent"
-            android:textAlignment="center"
-
-
-            android:textColor="#FFC107"
-            android:textSize="20dp"
-            android:text="Sign Up"/>
-
     </LinearLayout>
+</ScrollView>
 
 </LinearLayout>

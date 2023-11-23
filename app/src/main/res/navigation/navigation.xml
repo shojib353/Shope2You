@@ -3,23 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/login2">
+    >
     <fragment
-        android:id="@+id/login2"
+        android:id="@+id/login"
         android:name="com.project.shope2you.LogIn.Login"
         android:label="login"
         tools:layout="@layout/login" >
         <action
-            android:id="@+id/action_login2_to_signup"
-            app:destination="@id/signup" />
+            android:id="@+id/action_login_to_signup2"
+            app:destination="@id/signup2" />
     </fragment>
     <fragment
-        android:id="@+id/signup"
+        android:id="@+id/signup2"
         android:name="com.project.shope2you.SignUp.Signup"
         android:label="signup"
         tools:layout="@layout/signup" >
         <action
-            android:id="@+id/action_signup_to_login2"
-            app:destination="@id/login2" />
+            android:id="@+id/action_signup2_to_login"
+            app:destination="@id/login" />
     </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.project.shope2you.Home.Home"
+        android:label="home"
+        tools:layout="@layout/home" />
+    <fragment
+        android:id="@+id/cart2"
+        android:name="com.project.shope2you.Cart.Cart"
+        android:label="cart"
+        tools:layout="@layout/cart" />
+    <fragment
+        android:id="@+id/profile2"
+        android:name="com.project.shope2you.profile.Profile"
+        android:label="profile"
+        tools:layout="@layout/profile" />
 </navigation>
