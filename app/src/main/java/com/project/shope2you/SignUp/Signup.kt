@@ -39,12 +39,12 @@ btnSignUpSignUp.setOnClickListener {
 
 
     if (check()){
-        mainViewModel.SignUp(binding.signUpEmail.text.toString(),binding.SignUpPassword.text.toString(),
-            binding.signUpName.text.toString(),
-            binding.signUpPhone.text.toString(),
-            binding.signUpAddress.text.toString(),)
+        mainViewModel.SignUp(binding.signUpEmail.text.toString(),binding.SignUpPassword.text.toString())
         //createUser(binding.signUpEmail.text.toString(),binding.SignUpPassword.text.toString())
-
+        mainViewModel.Information(binding.signUpName.text.toString(),
+            binding.signUpPhone.text.toString(),
+            binding.signUpAddress.text.toString(),
+            )
 
 
 

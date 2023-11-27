@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import com.project.shope2you.MainActivity
 import com.project.shope2you.R
 import com.project.shope2you.databinding.LoginBinding
@@ -27,7 +25,6 @@ class Profile : Fragment() {
         mainActivity=requireActivity() as MainActivity
 
         binding.logout.setOnClickListener {
-            Firebase.auth.signOut()
             mainActivity.hasCompletedWelcome=false
             mainActivity.restart()
         }
