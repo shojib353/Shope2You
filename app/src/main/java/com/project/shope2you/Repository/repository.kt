@@ -1,7 +1,9 @@
 package com.project.shope2you.Repository
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -16,7 +18,7 @@ class repository(val context:Context) {
     val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
 
-    fun createUser(email: String, pass: String) {
+    fun createUser(email: String, pass: String,list: AuthData) {
 
 
         auth.fetchSignInMethodsForEmail(email)
@@ -31,31 +33,38 @@ class repository(val context:Context) {
                         // Handle accordingly (e.g., show an error message)
                     } else {
                         // Email does not exist
-                        auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
+                        auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "createUserWithEmail:success")
+                                val user = auth.currentUser
+                                Firebase.firestore.collection("userInfo").document(list.email).set(list)
+                                //updateUI(user)
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "createUserWithEmail:failure", task.exception)
 
-                            Toast.makeText(context, "SignUp Success", Toast.LENGTH_LONG).show()
- }
-                        // Proceed with registration or login
+                                //updateUI(null)
+                            }
+                        }
                     }
-                } else {
-                    // An error occurred
-                    // Handle the error
                 }
+
+
             }
 
-
-    }
-
-    @SuppressLint("SuspiciousIndentation")
-    fun StoreInformation(list: AuthData){
-        var db = Firebase.firestore
-
-            db.collection("userInfo").document(list.email).set(list)
+        @SuppressLint("SuspiciousIndentation")
+        fun StoreInformation(list: AuthData){
 
 
 
 
 
+
+
+
+
+        }
     }
 }
 

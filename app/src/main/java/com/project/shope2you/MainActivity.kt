@@ -23,7 +23,7 @@ import kotlin.system.exitProcess
 class MainActivity :  AppCompatActivity(R.layout.activity_main) {
 
     private lateinit var appBarConfig: AppBarConfiguration
-   //private lateinit var Binding:ActivityMainBinding
+    //private lateinit var Binding:ActivityMainBinding
 
 
 
@@ -75,9 +75,9 @@ class MainActivity :  AppCompatActivity(R.layout.activity_main) {
 
             }
             else if (destination.id == R.id.signup2) {
-            supportActionBar?.hide()
+                supportActionBar?.hide()
                 bottom.visibility=View.GONE
-        }
+            }
             else if (destination.id == R.id.subCat) {
                 bottom.visibility=View.GONE
             }

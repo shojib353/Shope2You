@@ -35,32 +35,32 @@ class Signup : Fragment() {
                 findNavController().navigate(R.id.login)
             }
 
-btnSignUpSignUp.setOnClickListener {
+            btnSignUpSignUp.setOnClickListener {
 
 
-    if (check()){
-        mainViewModel.SignUp(binding.signUpEmail.text.toString(),binding.SignUpPassword.text.toString())
-        //createUser(binding.signUpEmail.text.toString(),binding.SignUpPassword.text.toString())
-        mainViewModel.Information(binding.signUpName.text.toString(),
-            binding.signUpPhone.text.toString(),
-            binding.signUpAddress.text.toString(),
-            )
+                if (check()){
+                    mainViewModel.SignUp(binding.signUpEmail.text.toString(),binding.SignUpPassword.text.toString(),
+                        binding.signUpName.text.toString(),
+                        binding.signUpPhone.text.toString(),
+                        binding.signUpAddress.text.toString(),)
+                    //createUser(binding.signUpEmail.text.toString(),binding.SignUpPassword.text.toString())
 
 
 
-        findNavController().navigate(R.id.login)
+
+                    findNavController().navigate(R.id.login)
 
 
-    }
+                }
 
-    else{Toast.makeText(context,"input requared",Toast.LENGTH_LONG).show()
-        binding.signUpEmail.text=null
-        binding.SignUpPassword.text=null
-        binding.signUpName.text=null
-        binding.signUpPhone.text=null
-        binding.signUpAddress.text=null
-    }
-}
+                else{Toast.makeText(context,"input requared",Toast.LENGTH_LONG).show()
+                    binding.signUpEmail.text=null
+                    binding.SignUpPassword.text=null
+                    binding.signUpName.text=null
+                    binding.signUpPhone.text=null
+                    binding.signUpAddress.text=null
+                }
+            }
 
 
         }
@@ -98,15 +98,15 @@ btnSignUpSignUp.setOnClickListener {
     override fun onDestroy() {
         super.onDestroy()
     }
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
