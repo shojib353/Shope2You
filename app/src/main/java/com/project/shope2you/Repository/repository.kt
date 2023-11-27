@@ -30,6 +30,7 @@ class repository(val context:Context) {
                         // Email already exists
 
                         Toast.makeText(context, "already resister", Toast.LENGTH_LONG).show()
+
                         // Handle accordingly (e.g., show an error message)
                     } else {
                         // Email does not exist
